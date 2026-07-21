@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import express, { type Express, type Request, type Response } from 'express'
 import { db } from './db.ts'
 
