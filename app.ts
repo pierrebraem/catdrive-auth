@@ -3,7 +3,7 @@ import express, { type Express, type Request, type Response } from 'express'
 import { db } from './db.ts'
 
 const app: Express = express()
-const port: number = Number(process.env.APP_PORT)
+const port: number = Number(process.env.APP_PORT) || 3000
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World')
@@ -23,3 +23,5 @@ app.get('/test-db', async (req: Request, res: Response) => {
 app.listen(port, () => {
     console.log(`Auth service is running on port ${port}`)
 })
+
+export { app }
