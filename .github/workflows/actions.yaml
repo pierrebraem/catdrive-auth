@@ -25,3 +25,20 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 extensions: ts
                 package-manager: npm
+    
+    testing:
+      runs-on: ubuntu-24.04
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        
+        - name: Setup Node 26
+          uses: actions/setup-node@v4
+          with:
+            node-version: 26
+        
+        - name: Install dependencies
+          run: npm ci
+        
+        - name: Run tests
+          run: npm test
