@@ -11,7 +11,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/test-db', async (req: Request, res: Response) => {
     try{
-        const result = await db.any('SELECT firsname, lastname, email FROM users;')
+        const result = await db.any('SELECT firstname, lastname, email FROM users;')
         res.json(result)
     }
     catch(err){
