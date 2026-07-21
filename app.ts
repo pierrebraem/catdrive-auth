@@ -6,8 +6,6 @@ const app: Express = express()
 const port: number = Number(process.env.APP_PORT) || 3000
 
 app.get('/', (req: Request, res: Response) => {
-    const test: number = NaN
-    console.log(test)
     res.send('Hello World')
 })
 
