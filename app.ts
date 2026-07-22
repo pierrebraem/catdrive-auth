@@ -1,9 +1,15 @@
 /* eslint-disable no-console */
 import express, { type Express, type Request, type Response } from 'express'
+import cors from 'cors'
 import { db } from './db.ts'
 
 const app: Express = express()
 const port: number = Number(process.env.APP_PORT) || 3000
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World')
